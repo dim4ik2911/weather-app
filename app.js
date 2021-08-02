@@ -1,22 +1,23 @@
-const request = require("request");
+// const request = require("request");
+const geocode = require("./utils/geocode");
+const forecast = require("./utils/forecast");
 
-const url =
-  "http://api.weatherstack.com/current?access_key=2985e9e36d0035855d1d8b3970f799ee&query=London";
+const city = process.argv[2];
 
-request({ url: url, json: true }, (error, response) => {
-  const data = response.body.current;
-  // console.log(data);
-  console.log(
-    `${data.weather_descriptions[0]}. It's currently ${data.temperature} degrees out. It feelse like ${data.feelslike} degrees.`
-  );
-});
+if (city) {
+  geocode(city, (error, { latitude, longitude, location } = {}) => {
+    if (error) {
+      return console.log(error);
+    }
 
-const url1 =
-  "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiZGltNGlrMjkxMSIsImEiOiJja3IxMGJuN2QwYjk4MnJxbXVvc2p0enZvIn0.GvM0XT43P1PbihGvjtestQ&limit=1";
-
-request({ url: url1, json: true }, (error, response) => {
-  const data1 = response.body.features[0];
-  console.log(
-    `Lat is equal to ${data1.center[0]}, Long is equal to ${data1.center[1]}`
-  );
-});
+    forecast(latitude, longitude, (error, forecastData) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log(location);
+      console.log(forecastData);
+    });
+  });
+} else {
+  console.log("Provide the city");
+}
