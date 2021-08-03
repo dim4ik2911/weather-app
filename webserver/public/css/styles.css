@@ -43,6 +43,7 @@ header div a {
   text-align: center;
   border-bottom: 2px solid transparent;
   font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 header div a:hover {
@@ -59,4 +60,8 @@ footer {
 
 .portrait {
   width: 150px;
+}
+
+p {
+  font-size: 2.2rem;
 }
