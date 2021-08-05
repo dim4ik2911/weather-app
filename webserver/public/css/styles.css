@@ -1,12 +1,8 @@
-html {
-  font-size: 62.5%;
-}
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #0000b0;
+  color: #00002c;
   font-family: arial;
   min-height: 100vh;
   width: 100%;
@@ -17,7 +13,6 @@ body {
 
 .main-content {
   flex-grow: 1;
-
   width: 90%;
 }
 
@@ -29,7 +24,7 @@ header {
 }
 
 header h1 {
-  font-size: 8rem;
+  font-size: 80px;
   text-align: left;
 }
 header div {
@@ -38,24 +33,28 @@ header div {
 }
 
 header div a {
-  color: #0000b0;
+  color: #00002c;
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid transparent;
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
 header div a:hover {
-  border-bottom: 2px solid #0000b0;
+  border-bottom: 2px solid #00002c;
 }
 
 footer {
-  border-top: 2px solid #0000b0;
+  border-top: 2px solid #00002c;
   width: 100%;
-  padding: 0.5rem auto;
+  padding: 2px auto;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 25px;
+}
+
+footer h4 {
+  margin: 5px;
 }
 
 .portrait {
@@ -63,5 +62,20 @@ footer {
 }
 
 p {
-  font-size: 2.2rem;
+  font-size: 18px;
+}
+
+input {
+  border: 1px solid #00002c;
+  padding: 8px;
+  font-size: 20px;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  border: 1px solid #00002c;
+  background-color: #00002c;
+  color: white;
+  padding: 8px;
 }
